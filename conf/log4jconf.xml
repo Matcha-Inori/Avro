@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="serverLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/server.log"></param>
+        <param name="ImmediateFlush" value="true"></param>
+        <param name="Threshold" value="info"></param>
+        <param name="Append" value="true"></param>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] {%c:%L}-%m%n"></param>
+        </layout>
+    </appender>
+
+    <appender name="clientLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/client.log"></param>
+        <param name="ImmediateFlush" value="true"></param>
+        <param name="Threshold" value="info"></param>
+        <param name="Append" value="true"></param>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] {%c:%L}-%m%n"></param>
+        </layout>
+    </appender>
+
+    <appender name="commonLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/common.log"></param>
+        <param name="ImmediateFlush" value="true"></param>
+        <param name="Threshold" value="info"></param>
+        <param name="Append" value="true"></param>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] {%c:%L}-%m%n"></param>
+        </layout>
+    </appender>
+
+    <appender name="testLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/test.log"></param>
+        <param name="ImmediateFlush" value="true"></param>
+        <param name="Threshold" value="info"></param>
+        <param name="Append" value="true"></param>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] {%c:%L}-%m%n"></param>
+        </layout>
+    </appender>
+
+    <appender name="rootLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/root.log"></param>
+        <param name="ImmediateFlush" value="true"></param>
+        <param name="Threshold" value="info"></param>
+        <param name="Append" value="true"></param>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] {%c:%L}-%m%n"></param>
+        </layout>
+    </appender>
+
+    <logger name="com.matcha.server" additivity="false">
+        <appender-ref ref="serverLog"></appender-ref>
+    </logger>
+
+    <logger name="com.matcha.common" additivity="false">
+        <appender-ref ref="commonLog"></appender-ref>
+    </logger>
+
+    <logger name="com.matcha.client" additivity="false">
+        <appender-ref ref="clientLog"></appender-ref>
+    </logger>
+
+    <logger name="com.matcha.test" additivity="false">
+        <appender-ref ref="testLog"></appender-ref>
+    </logger>
+
+    <root>
+        <priority value="debug"></priority>
+        <appender-ref ref="rootLog"></appender-ref>
+    </root>
+</log4j:configuration>

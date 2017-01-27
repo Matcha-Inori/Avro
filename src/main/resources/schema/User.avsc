@@ -1,0 +1,11 @@
+{
+  "name" : "User",
+  "namespace" : "com.matcha.schema",
+  "doc" : "This is User Info",
+  "type" : "record",
+  "fields" : [
+    {"name" : "name", "type" : "string"},
+    {"name" : "age", "type" : "int"},
+    {"name" : "identity", "type" : "array", "item" : ["string"]}
+  ]
+}
